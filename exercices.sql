@@ -40,7 +40,7 @@ order by "length" asc;
 
 select concat("first_name", ' ', "last_name") as "Actor name"
 from "actor"
-where "last_name" = 'ALLEN';
+where "last_name" like '%ALLEN%';
 
 --7. Encuentra la cantidad total de películas en cada clasificación de la tabla “filmˮ y muestra la clasificación junto con el recuento.
 
@@ -69,7 +69,7 @@ from film;
 select p."amount" as "cost of the third-to-last rental"
 from "rental" r inner join "payment" p on p."rental_id" = r."rental_id"
 order by "rental_date" desc
-limit 1 offset 1;
+limit 1 offset 2;
 
 --12 Encuentra el título de las películas en la tabla “filmˮ que no sean ni ‘NC-17ʼ ni ‘Gʼ en cuanto a su clasificación.
 
